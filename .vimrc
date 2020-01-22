@@ -1,5 +1,5 @@
 " -- bootstrap -----------------------------------------------------------------
-
+colors darkblue 
 set encoding=utf-8  " set vim encoding to UTF-8
 set nocompatible    " the future is now, use vim defaults instead of vi ones
 set nomodeline      " disable mode lines (security measure)

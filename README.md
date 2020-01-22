@@ -70,7 +70,7 @@ Installation
 
     $ cd
     $ rm -rf .vim
-    $ git clone https://github.com/gpakosz/.vim.git
+    $ git clone https://github.com/shykoe/.vim.git
     $ ln -s .vim/.vimrc
 
 For the `heavenly` branch:
