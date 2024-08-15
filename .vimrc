@@ -11,12 +11,11 @@ if exists("+shellslash")
 endif
 
 set timeoutlen=500      " time in milliseconds for a key sequence to complete
-let mapleader=","       " change leader key to ,
-let maplocalleader=","  " change local leader key to ,
+let mapleader = "\<space>"
 
 " <leader>ev edits .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-
+nnoremap <leader>n :NERDTreeToggle<CR>
 " <leader>sv sources .vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>:redraw<CR>:echo $MYVIMRC 'reloaded'<CR>
 
@@ -184,11 +183,9 @@ if exists("+relativenumber")
       endif
     endfunc
   endif
-  nnoremap <silent> <leader>n :call RelativeNumberToggle()<CR>
 else                  " fallback
   set number          " show line numbers
   " inverts numbering
-  nnoremap <silent> <leader>n :set number! number?<CR>
 endif
 
 set nolist                            " hide unprintable characters
@@ -777,8 +774,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'preservim/nerdtree'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -794,3 +790,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 syntax on
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = '/usr/bin/clangd'
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+
